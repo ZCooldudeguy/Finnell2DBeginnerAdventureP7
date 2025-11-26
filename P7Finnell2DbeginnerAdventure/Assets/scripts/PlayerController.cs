@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Xml.Serialization;
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -11,6 +12,7 @@ public class PlayerController : MonoBehaviour
     Vector2 move;
     public int maxHealth = 5;
     int currentHealth;
+    public float speed = 3.9f;
 
     // Start is called before the first frame update
     void Start()
@@ -32,5 +34,11 @@ public class PlayerController : MonoBehaviour
     {
         Vector2 position = (Vector2)rigidbody2d.position + move * 3.9f * Time.deltaTime;
         rigidbody2d.MovePosition(position);
+
+    }
+    void ChangeHealth (int amount)
+    {
+        currentHealth = Mathf.Clamp(currentHealth + amount, 0, maxHealth);
+        Debug.Log(currentHealth + "/" + maxHealth);
     }
 }
