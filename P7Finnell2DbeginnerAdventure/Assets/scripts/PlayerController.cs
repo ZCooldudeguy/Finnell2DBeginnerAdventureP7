@@ -11,7 +11,7 @@ public class PlayerController : MonoBehaviour
     Rigidbody2D rigidbody2d;
     Vector2 move;
     public int maxHealth = 5;
-    int currentHealth;
+    int currentHealth = 1;
     public float speed = 3.9f;
 
     // Start is called before the first frame update
@@ -19,7 +19,7 @@ public class PlayerController : MonoBehaviour
     {
         MoveAction.Enable();
         rigidbody2d = GetComponent<Rigidbody2D>();
-        currentHealth = maxHealth;
+        currentHealth = maxHealth; // currentHealth = maxHealth;
     }
 
     // Update is called once per frame
@@ -36,7 +36,7 @@ public class PlayerController : MonoBehaviour
         rigidbody2d.MovePosition(position);
 
     }
-    void ChangeHealth (int amount)
+   public void ChangeHealth (int amount)
     {
         currentHealth = Mathf.Clamp(currentHealth + amount, 0, maxHealth);
         Debug.Log(currentHealth + "/" + maxHealth);
