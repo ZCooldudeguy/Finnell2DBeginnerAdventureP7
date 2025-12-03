@@ -11,22 +11,34 @@ public class PlayerController : MonoBehaviour
     Rigidbody2D rigidbody2d;
     Vector2 move;
     public int maxHealth = 5;
-    int currentHealth = 1;
+    public int health { get { return currentHealth; } }
+    int currentHealth;
     public float speed = 3.9f;
+    public float timeInvincible = 9.0f;
+    bool isInvincible;
+    float damageCooldown;
 
     // Start is called before the first frame update
     void Start()
     {
         MoveAction.Enable();
         rigidbody2d = GetComponent<Rigidbody2D>();
-        currentHealth = maxHealth; // currentHealth = maxHealth;
+        currentHealth = maxHealth;
+
     }
 
     // Update is called once per frame
     void Update()
     {
         move = MoveAction.ReadValue<Vector2>();
-        
+        if (isInvincible)
+        {
+            damageCooldown -= Time.deltaTime;
+            if (damageCooldown < 0)
+            {
+                isInvincible = false;
+            }
+        }
     }
 
 
@@ -40,5 +52,11 @@ public class PlayerController : MonoBehaviour
     {
         currentHealth = Mathf.Clamp(currentHealth + amount, 0, maxHealth);
         Debug.Log(currentHealth + "/" + maxHealth);
-    }
+        if (amount < 0)
+        {
+            return;
+        }
+        isInvincible = true;
+        damageCooldown = timeInvincible;
+    }   
 }
