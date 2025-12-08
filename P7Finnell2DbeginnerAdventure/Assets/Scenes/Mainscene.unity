@@ -144188,6 +144188,7 @@ GameObject:
   - component: {fileID: 1926721246}
   - component: {fileID: 1926721247}
   - component: {fileID: 1926721248}
+  - component: {fileID: 1926721249}
   m_Layer: 0
   m_Name: Ducktoro
   m_TagString: Untagged
@@ -144399,6 +144400,27 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.77, y: 0.66934305}
   m_EdgeRadius: 0
+--- !u!95 &1926721249
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1926721243}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1989688481
 GameObject:
   m_ObjectHideFlags: 0
@@ -145668,12 +145690,12 @@ PrefabInstance:
     - target: {fileID: 2577814097727166544, guid: 2ebf46dc8a4f3f2478d6acf024291a6f,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.11
+      value: -3.51
       objectReference: {fileID: 0}
     - target: {fileID: 2577814097727166544, guid: 2ebf46dc8a4f3f2478d6acf024291a6f,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 5.45
+      value: -0.07
       objectReference: {fileID: 0}
     - target: {fileID: 2577814097727166544, guid: 2ebf46dc8a4f3f2478d6acf024291a6f,
         type: 3}
